@@ -1,6 +1,10 @@
+/**
+ * @author      Pilar Egea
+ * @version     1.6  
+ * @since       1.2
+ */
 public class CCuenta {
-
-
+	
     private String nombre;
     private String cuenta;
     private double saldo;
@@ -9,26 +13,36 @@ public class CCuenta {
     public CCuenta()
     {
     }
-
+    /**
+     * @param nombre cuenta saldo
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         setNombre(nom);
         setCuenta(cue);
         setSaldo(sal);
     }
-
+    
+    /**
+     * @param estado del saldo
+     */
     public double estado()
     {
         return getSaldo();
     }
-
+    
+    /**
+     * @param como ingresar el dienro y como no se puede ingresar
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
-
+    /**
+     * @param forma de retirar el dienro
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
